@@ -1,0 +1,77 @@
+<ion-modal-view>
+    <ion-header-bar>
+        <h1 class = "title">Book Your Appointment</h1>
+        <div class="buttons">
+            <button class = "button icon icon-left ion-ios-close-outline"  ng-click = "custommodal.hide()">Close</button>
+        </div>
+    </ion-header-bar>
+
+    <ion-content class="bg-color1 padding-top padding-bottom">
+        <form name="appointform">
+            <div class="list list-inset" ng-show="home.firststep">
+                <ion-checkbox ng-model="home.is_patient" checked>I am the patient</ion-checkbox>
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Patient Name</span>
+                    <input type="text" placeholder="Patient Name" ng-model="home.patient_name">
+                </label>
+                <label class="item item-input item-stacked-label" >
+                    <span class="input-label">Patient Mobile</span>
+                    <input type="text" placeholder="Patient Mobile" ng-model="home.patient_mobile">
+                </label>
+                <label class="item item-input item-stacked-label" ng-show="!home.is_patient">
+                    <span class="input-label">Your Mobile Number</span>
+                    <input type="text" placeholder="Your Mobile Number" ng-model="home.creator_number">
+                </label>
+                <label class="item item-input item-stacked-label" ng-show="!home.is_patient">
+                    <span class="input-label">Relationship with patient</span>
+                    <select ng-model="home.relationship" style="width: 100%;display: block;">
+                        <option value="" selected="">Select Relationship</option>
+                        <option value='Children'>Children</option>
+                        <option value="Spouse">Spouse</option>
+                    </select>
+                </label>
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Nature of visit</span>
+                    <ion-radio ng-model="home.type_of_visit" ng-value="'firstvisit'">First Time Visit</ion-radio>
+                    <ion-radio ng-model="home.type_of_visit" ng-value="'followup'">Follow Up Visit</ion-radio>
+                </label>
+                <label class="item item-input" >
+                    <button class="button button-calm button-small button-block" ng-click="home.firststep = false;home.secondstep = true;">Confirm</button>
+                </label>
+            </div>
+            <div class="list list-inset" ng-show="home.secondstep">
+                <div class="item">
+                    <h2 class="calm text-center">Dr . {{home.dr_name}}</h2>
+                    <h3 class="calm text-center">{{home.address + ", " + home.area_name + ", " + home.city_name + ", " + home.state_name| trimCharactor : ',' }}</h3>
+                    <h3 class="calm text-center">Contact No : {{home.apt_contact_no_1}}</h3>
+                </div>
+                <div class="item item-icon-right item-stacked-label" ng-click="showDatepicker()">
+                    <input type="text" placeholder="Select Date" ng-model="home.appdate" disabled="">
+                    <i class="icon ion-calendar" ></i>
+
+                </div>
+                <div class="item item-stacked-label">
+                    <h2 class="balanced text-center">Please confirm appointment schedule in <br>consultation with Doctor</h2>
+                </div>
+                
+                <label class="item item-input" >
+                    <button class="button button-calm button-small button-block" ng-click="fixDrAppoint();">Done</button>
+                </label>
+            </div>
+            <div class="list list-inset" ng-show="home.thirdstep">
+                <div class="item">
+                    <h2 class="balanced text-center">{{home.successmsg}}</h2>
+                    <h2 class="danger text-center">{{home.errormsg}}</h2>
+                </div>
+                <div class="item ">
+                    <p class="calm text-center">Cash On Counter</p>
+                    <h3 class="calm text-center">Fee : Rs {{home.docfee}}</h3>
+                </div>
+                <label class="item item-input" >
+                    <button class="button button-stable button-small button-block" ng-click = "home.thirdstep = false;home.firststep = true;custommodal.hide()" >Close</button>
+                </label>
+            </div>
+        </form>
+
+    </ion-content>
+</ion-modal-view>

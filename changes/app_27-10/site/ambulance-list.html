@@ -1,0 +1,28 @@
+<ion-view class="" cache-view="false">
+    <div ng-include="'templates/site/site-header.html'">
+    </div>
+    <div class="bar bar-subheader site-view ">
+        <div class="text-center automargin"><img src="img/ambulance.png" class="rounded-img vert-align-middle" style="width: 32px;"> Ambulance</div>
+    </div>
+    <ion-content class="has-header has-subheader">
+
+        <div class="list">
+
+            <a class="item bg-color1 " ng-repeat="row in searchResult.resultdata">
+                <div class="row">
+                    <h4 class="col col-75 light">
+                        Mr. {{row.hospital_name}}<br>
+                        Category: {{row.company_name}}<br>
+                        Type {{row.type_of_hospital}}<br>
+                        Mobile No: +91 {{row.mobile}}<br>
+                        Address: {{row.address}}
+                    </h4>
+                    <h4 class="col col-25">
+                        <button class="button button-small button-calm" ng-click="showLocation({{row.user_id}},{{row.latitude}},{{row.longitude}})">Track It</button>
+                    </h4>
+                </div>
+            </a>
+            
+        </div>
+    </ion-content>
+</ion-view>

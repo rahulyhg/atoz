@@ -1,0 +1,47 @@
+<ion-view class="login-view auth-view" cache-view="false">
+    <ion-content scroll="true">
+        <!--<div class="row">
+            <div class="col col-50 align-content-center">SAVING UPTO 50%</div>
+            <div class="col col-50 assertive text-right">
+                Emergency 
+                <img src="img/emergency.png" width="32" class="" style="vertical-align:middle" />
+            </div>
+        </div>-->
+        <div class="login-section">
+            <div class="row">
+                <div class="col col-75 automargin text-center stable">
+                    <img src="img/01.png" class="" style="width: 80%;" />
+                    <div class="login-container">
+                        <div class="item-body">
+                            <div ng-show="error" class="alert alert-danger assertive"> {{error}}</div>
+                            <div ng-show="success" class=" balanced"> {{success}}</div>
+                            <form name="login_form" class="" novalidate ng-cloak>
+                                <div class="list">
+                                  <label class="item1 item-input item-floating-label ">
+                                    <span class="input-label stable text-left">Mobile</span>
+                                    <input type="text" placeholder="Enter Mobile" name="user_email" class="stable" ng-model="user.email" required maxlength="10">
+                                  </label>
+                                  <label class="item1 item-input item-floating-label" show-hide-container>
+                                      <span class="input-label stable text-left">Password</span>
+                                    <input type="password" placeholder="Enter Password" name="user_password" ng-model="user.password" required show-hide-input>
+                                  </label>
+                                </div>
+                                <button type="submit" class="button button-balanced button-small button-block icon-right " ng-click="doLogIn()" ng-disabled=" (login_form.user_email.$invalid || login_form.user_password.$invalid) ? true : false">
+                                    Sign In <i class="icon ion-log-in"></i> 
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                    <p>Don't Have Any Account? <a href="#/signup">SIGN UP</a></p>
+                    <h6 class="text-right stable">
+                        <a href="#/forgotpass"><span>Forgot Password</span></a>
+                    </h6>
+                    <h4 class=" stable" ng-click="skipLogin()">
+                        Skip <i class="icon ion-ios-arrow-forward"></i><i class="icon ion-ios-arrow-forward"></i>
+                    </h4>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+    
+</ion-view>

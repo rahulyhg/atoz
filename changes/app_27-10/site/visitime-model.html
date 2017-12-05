@@ -1,0 +1,20 @@
+<ion-modal-view>
+    <ion-header-bar>
+        <h1 class = "title">Visiting Time</h1>
+        <div class="buttons">
+        <button class = "button icon icon-left ion-ios-close-outline"  ng-click = "closeModal(3)">Close</button>
+        </div>
+    </ion-header-bar>
+
+    <ion-content class="bg-color1 padding-top padding-bottom">
+        <div class="list list-inset">
+            <div ng-repeat="row in searchResult.visit_details">
+                <div class="item">
+                    {{row.day}} - Morning {{ row.clinic_open_time | myformateTime | date : 'h:mm a' }} - {{ row.clinic_close_time | myformateTime | date : 'h:mm a' }} <br>
+                                    Evening {{ row.clinic_eve_open_time | myformateTime | date : 'h:mm a' }} - {{ row.clinic_eve_close_time | myformateTime | date : 'h:mm a' }}<br>
+                </div>                
+            </div>
+        </div>
+        
+    </ion-content>
+</ion-modal-view>

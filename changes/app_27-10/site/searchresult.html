@@ -1,0 +1,63 @@
+<ion-view class="" cache-view="false">
+    <div ng-include="'templates/site/site-header.html'">
+    
+    </div>
+    <div class="bar bar-subheader site-view">
+        <div class="row">
+            <div class="col col-67">
+                <span class="themeColor1 capitalizeword themeunderline">{{home.selectedSpeciality| filter }}</span>
+            </div>
+            <div class="col col-33 assertive text-right sortoption">
+                <select class="minimal" name="sortby" id="sort" ng-change="searchDoctorResult()" ng-model="home.selectedSortby">
+                    <option value="">Sort By</option>
+                    <option value="Experience">Experience</option>
+                    <option value="Savings">Savings</option>
+                    <!--<option value="Rating">Rating</option>-->
+                    <option value="feehighlow">Fee High To Low</option>
+                    <option value="feelowhigh">Fee Low To High</option>                                
+                </select>
+            </div>
+        </div>
+    </div>
+    <ion-content class="has-header has-subheader">
+
+        <div class="list searchlist">
+
+            <a class="item item-thumbnail-left searchresult" ng-repeat="row in searchResult">
+                <img ng-src="{{home.atoz_upload + row.profile_image}}" class="rounded-img" ng-click="details(row.user_id, row.clinic_id,row.role_id)">
+                <h3 style="text-transform: capitalize;" ng-click="details(row.user_id, row.clinic_id,row.role_id)">Dr. {{row.first_name + " " + row.last_name}} </h3>
+                <h5 ng-click="details(row.user_id, row.clinic_id,row.role_id)">{{row.doctordegree}}</h5>
+                <h4 ng-if="row.parent_hosp_id != null" ng-click="details(row.user_id, row.clinic_id,row.role_id)">{{row.area_name + ", " + row.city_name + ", " + row.state_name| trimCharactor : ',' }}</h4>
+                <h4 ng-if="row.parent_hosp_id == null" ng-click="details(row.user_id, row.clinic_id,row.role_id)">{{row.clinic_address + ", " + row.area_id + ", " + row.city_id + ", " + row.state_id| trimCharactor : ','}}</h4>
+                <h3 ng-if="row.parent_hosp_id != null">{{row.drhospital}} </h3>
+                <h3 ng-if="row.parent_hosp_id == null">{{row.clinic_name}} </h3>
+                <p>{{row.description| limitTo : 100}} </p>
+   
+                <div class="row" ng-click="details(row.user_id, row.clinic_id,row.role_id)">
+                    <h4 class="col col-50">
+                        Fees - {{ (row.fees != null && row.fees != 0) ? row.fees+" Rs" : "NA" }}
+                    </h4>
+                    <h4 class="col col-50">
+                        Exp - {{row.experience | calculateAge}}
+                    </h4>
+                </div>
+                <!--<div class="row">
+                    <h4 class="col col-100">
+                        Review - {{row.ratecount}}
+                        
+                    </h4>
+                </div>-->
+                <div class="row">
+                    <h4 class="col col-50">
+                        <button class="button button-small button-calm" ng-click="bookAppointment('searchResult',{speciality : home.selectedSpeciality, loctn : home.selectedLocation, iscity : home.selectedcategory, docid : row.user_id , docfee : row.fees ,clinicid : row.clinic_id, apt_contact_no_1 : row.apt_contact_no_1, city_name : row.city_name ,state_name : row.state_name,country_name : row.country_name,address : row.address,area_name: row.area_name,dr_name: row.first_name+' '+row.last_name})">Book Appointment</button>
+                    </h4>
+                    <h4 class="col col-50" style="padding-top: 13px;">
+                        <span ng-if="row.saving != '' && row.saving != null ">Saving Upto {{row.saving}} % </span>
+                    </h4>
+                </div>
+                
+            </a>
+
+        </div>
+    </ion-content>
+</ion-view>r

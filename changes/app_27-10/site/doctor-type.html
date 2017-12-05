@@ -1,0 +1,22 @@
+<ion-view class="" cache-view="false">
+    <div class="site-view">
+        <div class="row">
+            <div class="col col-50">
+                <a href="#/site"><img src="img/logo.png" class="" style="" height="32" /></a>
+            </div>
+            <div class="col col-50 assertive text-right">
+                Emergency 
+                <img src="img/emergency.png" width="32" class="" style="vertical-align:middle" />
+            </div>
+        </div>
+    </div>
+    <ion-content class="has-header ">
+        <div class="list">
+            <a class="item item-thumbnail-left" ng-repeat="row in searchResult.resultdata"  href="#/searchResult/{{row.speciality_name}}//Y">
+                <img ng-src="{{home.atoz_upload + row.img_name}}" class="vert-align-middle">
+                <h>{{row.speciality_name}} </h1>
+            </a>
+
+        </div>
+    </ion-content>
+</ion-view>

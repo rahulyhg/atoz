@@ -1,0 +1,16 @@
+<ion-nav-bar class="bg-color2 nav-title-slide-ios7 padding-top padding-bottom">
+    <ion-nav-buttons side="left">
+        <button ng-click = "gotostate('site')" class="button button-clear"><img src="img/02.png" class="" style="" height="32" ng-click = "gotostate('site')"/></button>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right" class="">
+        <button class="button button-clear button-light" ng-click = "openModal(1)">
+            <i class="icon ion-ios-location-outline" ></i>
+        </button>
+        <button class="button button-clear button-light" ng-click = "openModal(2)">
+            <i class="icon ion-ios-search-strong"></i>
+        </button>
+        <button class="button button-clear button-light" ng-click ="appData != null ? logout() : gotostate('login')">
+            <i class="icon " ng-class="appData != null ? 'ion-log-out' : 'ion-ios-person-outline'"></i>
+        </button>
+    </ion-nav-buttons>
+</ion-nav-bar>

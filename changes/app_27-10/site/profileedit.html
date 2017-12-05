@@ -1,0 +1,56 @@
+<ion-view class="" cache-view="false">
+    <ion-content class="myappointment">
+        
+        <div class="padding">
+            <img src="img/logo.png" class="" style="" height="32" ng-click="gotostate('site')"/>
+        </div>
+        <div class="profilebg padding">
+            <div class="img-container" style="top:-63px">
+                <img ng-src="{{appData.profile_image != nulll ? home.atoz_upload + appData.profile_image : 'img/patient.png'}}" class="" >
+                <div class="editbtn" ng-click="selectPicture()">
+                    Select Photo
+                </div>
+            </div>
+            <div class="row">
+                <div class="col col-75 automargin text-center stable">
+                    
+                    <div class="login-container">
+                        <div class="item-body">
+                            <div ng-show="home.error" class="alert alert-danger assertive"> {{home.error}}</div>
+                            <div ng-show="home.success" class=" balanced"> {{home.success}}</div>
+                            <form name="login_form" class="" novalidate ng-cloak>
+                                
+                                <div class="list ">
+                                    <label class="item1 item-input item-floating-label ">
+                                        <!--<span class="input-label1 stable text-left">Mobile</span>-->
+                                        <input type="text" placeholder="Enter Mobile" name="user_mobile" class="stable text-center" ng-model="appData.mobile" required maxlength="10" value="{{appData.mobile}}">
+                                    </label>
+                                    <label class="item1 item-input item-floating-label">
+                                        <!--<span class="input-label1 stable">First Name</span>-->
+                                        <input type="text" placeholder="Enter First Name" name="user_firstname" class="text-center stable" ng-model="appData.first_name" required>
+                                    </label>
+                                    <label class="item1 item-input item-floating-label">
+                                        <!--<span class="input-label1 stable">Last Name</span>-->
+                                        <input type="text" placeholder="Enter Last Name" name="user_lastname" class="text-center stable" ng-model="appData.last_name" required>
+                                    </label>
+                                    <label class="item1 item-input item-floating-label">
+                                        <!--<span class="input-label1 stable">Email</span>-->
+                                        <input type="text" placeholder="Enter Email" name="user_email" class="text-center stable" ng-model="appData.email_1" required>
+                                    </label>
+                                    <label class="item1 item-input item-floating-label">
+                                        <!--<span class="input-label1 stable">Address</span>-->
+                                        <input type="text" placeholder="Enter Address" name="user_address" class="text-center stable" ng-model="appData.address" required>
+                                    </label>
+                                </div>
+                                <button type="submit" class="button button-balanced button-small button-block icon-right " ng-click="updateProfile()" ng-disabled=" (login_form.user_email.$invalid || login_form.user_password.$invalid) ? true : false">
+                                    Update <i class="icon ion-log-in"></i> 
+                                </button>
+                            </form>
+                        </div>
+                    </div>                                                                                                                                                                                                                                                                                      
+                </div>
+            </div>
+        </div>
+            
+    </ion-content>
+</ion-view>

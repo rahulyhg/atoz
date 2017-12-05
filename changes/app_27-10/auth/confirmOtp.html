@@ -1,0 +1,35 @@
+<ion-view class="confirmOtp-view auth-view" cache-view="false">
+    <ion-content scroll="true">
+       
+        <div class="login-section">
+            <div class="row">
+                <div class="col col-75 automargin text-center stable">
+                    <img src="img/logo_white.png" class="" style="width: 80%;" />
+                    <div class="login-container">
+                        <div class="item-body">
+                            <div ng-show="error" class="alert alert-danger assertive"> {{error}}</div>
+                            <div ng-show="success" class=" balanced"> {{success}}</div>
+                            <form name="confirmOtp_form" class="" novalidate ng-cloak>
+                                <div class="list">
+                                  <label class="item1 item-input item-floating-label ">
+                                    <span class="input-label stable text-left">Enter OTP</span>
+                                    <input type="text" placeholder="Enter Otp" name="user_otp" class="stable" ng-model="user.otp" required maxlength="10">
+                                  </label>
+                                 
+                                </div>
+                                <button type="submit" class="button button-balanced button-small button-block icon-right " ng-click="sendOtp()" ng-disabled=" (confirmOtp_form.user_mobile.$invalid) ? true : false">
+                                    Confirm OTP <i class="icon ion-log-in"></i> 
+                                </button>
+				<a href="#/login">Confirm OTP</a>
+                            </form>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+            
+        </div>
+    </ion-content>
+    
+</ion-view>

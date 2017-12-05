@@ -1,0 +1,89 @@
+<ion-view class="forgotpass-view auth-view" cache-view="false">
+    <ion-content scroll="true">
+
+        <div class="login-section">
+            <div class="row">
+                <div class="col col-75 automargin text-center stable">
+                    <img src="img/01.png" class="" style="width: 80%;" />
+                    <div class="login-container">
+                        <div class="item-body">
+                            <div ng-show="error" class="alert alert-danger assertive"> {{error}}</div>
+                            <div ng-show="success" class=" balanced"> {{success}}</div>
+                            <form name="forgotpass_form" class="" novalidate ng-cloak ng-show="user.firststep">
+                                <div class="list">
+                                    <label class="item1 item-input item-floating-label ">
+                                        <span class="input-label stable text-left">Mobile</span>
+                                        <input type="text" placeholder="Enter Mobile" name="user_mobile" class="stable" ng-model="user.mobile" required maxlength="10">
+                                    </label>
+
+                                </div>
+                                <button type="submit" class="button button-balanced button-small button-block icon-right " ng-click="sendForgotOtp()" ng-disabled=" (forgotpass_form.user_mobile.$invalid) ? true : false">
+                                    Send OTP <i class="icon ion-log-in"></i> 
+                                </button>
+                                <!--				<a href="#/confirmOtp">Send OTP</a>-->
+                            </form>
+
+                            <form name="forgot_confirm_form" class="" novalidate ng-cloak ng-show="user.secondstep">
+                                <div class="list">
+                                    <label class="item1 item-input item-floating-label">
+                                        <span class="input-label stable text-left">OTP</span>
+                                        <input type="text" placeholder="Enter OTP" name="user_otp" ng-model="user.otp" required show-hide-input>
+                                    </label>
+                                </div>
+                                <button type="submit" class="button button-balanced button-small button-block icon-right " ng-click="conForgotOtp()" ng-disabled=" (forgot_confirm_form.user_otp.$invalid) ? true : false">
+                                    Confirm OTP<i class="icon ion-log-in"></i> 
+                                </button>
+                                <a href="#/login">Log In</a>
+                            </form>
+
+
+                            <form name="forgot_password_form" class="" novalidate ng-cloak ng-show="user.thirdstep">
+                                <div class="list">
+                                    <label class="item1 item-input item-floating-label">
+                                        <span class="input-label stable text-left">Password</span>
+                                        <input type="text" placeholder="Enter Password" name="user_password" ng-model="user.password" required show-hide-input>
+                                    </label>
+                                    <label class="item1 item-input item-floating-label">
+                                        <span class="input-label stable text-left">Confirm Password</span>
+                                        <input type="text" placeholder="Enter Password" name="user_con_password" ng-model="user.con_password" ng-match="user.password"  required show-hide-input>
+                                    </label>
+                                    
+                                    <span data-ng-show="forgot_password_form.user.con_password.$error.match">Password are Not match!</span>
+                                </div>
+<!--                                <div class="list">
+                                    <label class="item1 item-input item-floating-label">
+                                <span class="input-label stable text-left">Password</span>
+                                <input data-ng-model='user.password' type="password" name='user_password' placeholder='Enter Password' required show-hide-input>
+                                <div ng-show="forgot_password_form.user_password.$error.required">
+                                    Field required</div>
+                                    </label>
+                                <label class="item1 item-input item-floating-label">
+                                <span class="input-label stable text-left">Confirm Password</span>
+                                <input ng-model='user.con_password' type="password" name='user_con_password' placeholder='confirm password' required data-password-verify="user.user_password">
+                                <div ng-show="forgot_password_form.user_con_password.$error.required">
+                                    Field required!</div>
+                                <div ng-show="forgot_password_form.user_con_password.$error.passwordVerify">
+                                    Fields are not equal!</div>
+                                </label>
+                                 </div>-->
+
+
+                                <button type="submit" class="button button-balanced button-small button-block icon-right " ng-click="conForPassword()" ng-disabled=" (forgot_confirm_form.user_password.$invalid) ? true : false">
+                                    Submit<i class="icon ion-log-in"></i>
+                                </button>
+                                <a href="#/login">Log In</a>
+                            </form>
+                        </div>
+                    </div>
+
+                    <h4 class=" stable" ng-click="skipLogin()">
+                        Skip <i class="icon ion-ios-arrow-forward"></i><i class="icon ion-ios-arrow-forward"></i>
+                    </h4>
+                </div>
+            </div>
+            <div style="height: 50px;">
+
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

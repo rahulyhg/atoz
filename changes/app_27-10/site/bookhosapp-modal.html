@@ -1,0 +1,28 @@
+<ion-modal-view>
+    <ion-header-bar>
+        <h1 class = "title">Book Your Hospital Appointment</h1>
+        <div class="buttons">
+            <button class = "button icon icon-left ion-ios-close-outline"  ng-click = "custommodal.hide()">Close</button>
+        </div>
+    </ion-header-bar>
+
+    <ion-content class="bg-color1 padding-top padding-bottom">
+        <form name="bookhosform">
+            
+                
+               
+            <div ng-repeat="row in Result">
+<!--                <h2 ng-repeat="row in home.service"></h2>-->
+                <div class="col-40">
+               <h4 class="calm text-center">{{ row.role_name }}</h4>
+               <h5 class="calm text-center">{{row.apt_contact_no_1}}</h5>
+                </div>
+                
+            </div>
+             
+            
+            
+        </form>
+
+    </ion-content>
+</ion-modal-view>

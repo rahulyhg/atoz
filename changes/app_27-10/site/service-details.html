@@ -1,0 +1,137 @@
+
+<ion-view class="" cache-view="false">
+    <div ng-include="'templates/site/site-header.html'">
+    </div>
+    <div class="bar bar-subheader site-view">
+        <div class="row">
+            <div class="col col-67">
+                <span class="calm capitalizeword text-underline">{{home.selectedSpeciality| filter }}</span>
+            </div>
+            <div class="col col-33 assertive text-right">
+
+                <span ng-click="goback()"><i class="icon ion-ios-arrow-back"></i><i class="icon ion-ios-arrow-back"></i> Back</span>
+            </div>
+        </div>
+    </div>
+    <ion-content class="has-header has-subheader">
+        <div class="list">
+
+            <div class="item item-thumbnail-left searchresult">
+                <!--                <img ng-src="img/hospital.png" class="rounded-img" ng-if="searchResult.role_id == 5">-->
+
+                <!--                <img ng-show="img/pathologylabs.png" ng-src="{{home.atoz_upload + searchResult.profile_image}}" onError="angular.element(this).scope().product.img = false"/>-->
+
+                <!--                <img ng-src="img/diagnosticscenter.png" class="rounded-img" ng-if="searchResult.role_id == 7">
+                                <img ng-src="img/bloodbanks.png" class="rounded-img" ng-if="searchResult.role_id == 8">
+                                <img ng-src="img}/medicalstores.png" class="rounded-img" ng-if="searchResult.role_id == 9">-->
+               
+                <img ng-src="{{searchResult.profile_image != null ? home.atoz_upload + searchResult.profile_image : 'img/hospital.png'}}" class="rounded-img" ng-if="searchResult.role_id == 5">
+
+                <img  ng-src="{{searchResult.profile_image != null ? home.atoz_upload + searchResult.profile_image : 'img/pathologylabs.png'}}" class="rounded-img" ng-if="searchResult.role_id == 6" >
+
+                <img ng-src="{{searchResult.profile_image != null ? home.atoz_upload + searchResult.profile_image : 'img/diagnosticscenter.png'}}" class="rounded-img" ng-if="searchResult.role_id == 7" >
+
+                <img ng-src="{{searchResult.profile_image != null ? home.atoz_upload + searchResult.profile_image : 'img/bloodbanks.png'}}" class="rounded-img" ng-if="searchResult.role_id == 8">
+
+                <img ng-src="{{searchResult.profile_image != null ? home.atoz_upload + searchResult.profile_image : 'img/medicalstores.png'}}" class="rounded-img" ng-if="searchResult.role_id == 9">
+              
+                <h3 style="text-transform: capitalize;">{{searchResult.hospital_name}} </h3>
+                <h5>{{searchResult.type_of_hospital}}</h5>
+                <h4 class="no-overflow">{{searchResult.address + ", " + searchResult.area_name + ", " + searchResult.city_name + ", " + searchResult.state_name| trimCharactor : ',' }}</h4>
+                <h3  ng-if="searchResult.role_id == 5">No.of Beds - {{ (searchResult.total_no_of_bed != null && searchResult.total_no_of_bed != 0) ? searchResult.total_no_of_bed : "NA"}}</h3>
+                <p>{{searchResult.description}} </p>
+            </div>
+            <div class="row detailspage">
+                <h6 class="col col-33 text-center">
+                    Established in - {{ (searchResult.hos_establishment != null && searchResult.hos_establishment != '1970') ? searchResult.hos_establishment : "NA" | date :'y'}}<br>
+                    <span ng-if="searchResult.role_id == 5">    {{searchResult.doctorcnt}} Doctors
+                    </span>
+                </h6>
+                <h6 class="col col-33 text-center">
+                    Hours of Operation <br>
+                    <span ng-switch="searchResult.is_open_allday">
+                        <span ng-switch-when="Y">24 X 7</span>
+                        <span ng-switch-when="N">
+                            {{ row.hospital_open_time | myformateTime | date : 'h:mm a' }} - {{ row.hospital_close_time | myformateTime | date : 'h:mm a' }}
+                        </span>
+                    </span>
+                </h6>
+                <h6 class="col col-33 text-center">
+                    <button class="button button-small button-calm" ng-click="bookHosAppointment('serviceDetails', {userid :searchResult.user_id, roleid : searchResult.role_id})" ng-if="searchResult.role_id == 5">Book your Appointment</button>
+                    <button class="button button-small button-calm" ng-click="bookLabAppointment('serviceDetails', {userid : searchResult.user_id, roleid : searchResult.role_id})" ng-if="searchResult.role_id == 6">Book Your Test at Lab/Home</button>
+                    <button class="button button-small button-calm" ng-click="bookLabAppointment('serviceDetails', {userid : searchResult.user_id, roleid : searchResult.role_id})" ng-if="searchResult.role_id == 7">Book Your Test at Lab/Home</button>
+                    <button class="button button-small button-calm" ng-click="bookLabAppointment('serviceDetails', {userid : searchResult.user_id, roleid : searchResult.role_id})" ng-if="searchResult.role_id == 8">Book Request Your Blood </button>
+                    <button class="button button-small button-calm" ng-click="bookLabAppointment('serviceDetails', {userid : searchResult.user_id, roleid : searchResult.role_id})" ng-if="searchResult.role_id == 9">Book Medicine at Store / Home </button>
+                </h6>
+
+            </div>
+        </div>
+
+        <div class="custom-tab-container bg-color1" content-tabs tabsdata='tabsdata'>
+            <my-tabs>
+                <my-tab title="Doctors" tabimg='specialtydoctor.png' ng-if="searchResult.role_id == 5">
+                    <select ng-model="query">
+                        <option value="">All Specialist</option>
+                        <option ng-repeat="spec in searchResult.speDoctCount" value="{{spec.speciality_name}}">{{spec.speciality_name}} ({{spec.no}})</option>
+                    </select>
+                    <div class="list searchlist">
+
+                        <a class="item item-thumbnail-left searchresult" ng-repeat="row in searchResult.speDoctList| filter : query ">
+                            <img ng-src="{{home.atoz_upload + row.profile_image}}" class="rounded-img" ng-click="details(row.user_id, null, row.role_id)">
+                            <h3 ng-click="details(row.user_id, null, row.role_id)">{{row.first_name + " " + row.last_name}} </h3>
+                            <h5 ng-click="details(row.user_id, null, row.role_id)">{{row.userspeciality}}</h5>
+                            <h5 ng-click="details(row.user_id, null, row.role_id)">{{row.doctordegree}}</h5>
+                            <p>{{row.description| limitTo : 100}} </p>
+
+                            <div class="row">
+                                <h4 class="col col-50">
+                                    Fees - {{ (row.fees != null && row.fees != 0) ? row.fees + " Rs" : "NA"}}
+                                </h4>
+                                <h4 class="col col-50">
+                                    Review - {{row.ratecount}}
+                                </h4>
+                            </div>
+                            <div class="row">
+                                <h4 class="col col-100">
+                                    Experience - {{row.experience| calculateAge}}
+                                </h4>
+                            </div>
+                            <button class="button button-small button-calm" ng-click="bookAppointment()" ng-if="row.role_id == 5">Book your Appointment</button>
+                        </a>
+
+                    </div>
+                </my-tab>
+                <my-tab title="Services" tabimg = "services.png">
+                    <ul>
+                        <li ng-repeat="servicerow in searchResult.user_service">
+                            <div class="row">
+                                <span class="col col-50 text-center">
+                                    {{servicerow.service_name}}
+                                </span>
+                                <span class="col col-50 text-center">
+                                    {{servicerow.service_discount != null ? servicerow.service_discount+"%": ""}}
+                                </span>
+
+                            </div>
+                        </li>
+                    </ul>
+
+                </my-tab>
+                <my-tab title="Location Map" tabimg='locationmap.png'>
+                    <div id="map" data-tap-disabled="true"></div>
+                </my-tab>
+                <my-tab title="Gallery" tabimg='gallery.png'>
+                    <div class="row" ng-repeat="image in searchResult.user_photos" ng-if="$index % 2 === 0">
+                        <div class="col col-50" ng-if="$index < searchResult.user_photos.length">
+                            <img ng-src="{{home.atoz_upload + searchResult.user_photos[$index].document}}" width="100%" height="150" />
+                        </div>
+                        <div class="col col-50" ng-if="$index + 1 < searchResult.user_photos.length">
+                            <img ng-src="{{home.atoz_upload + searchResult.user_photos[$index + 1].document}}" width="100%" height="150" />
+                        </div>
+                    </div>
+                </my-tab>
+
+            </my-tabs>
+        </div>
+    </ion-content>
+</ion-view>

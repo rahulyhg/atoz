@@ -1,0 +1,404 @@
+2017/11/10 15:27:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "docViewAppointment".' in E:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('docViewAppointm...')
+#1 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('docViewAppointm...')
+#2 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('bookappointment...')
+#3 E:\wamp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 E:\wamp\www\atoznew\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/atoznew/index.php?r=bookappointment/docViewAppointment
+HTTP_REFERER=http://localhost/atoznew/index.php?r=Bookappointment
+---
+2017/11/10 15:46:03 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens. The SQL statement executed was: SELECT *
+FROM `az_aptmt_query`
+WHERE id=:queryid.
+in E:\wamp\www\atoznew\protected\controllers\BookappointmentController.php (20)
+in E:\wamp\www\atoznew\index.php (13)
+2017/11/10 15:46:03 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens. The SQL statement executed was: SELECT *
+FROM `az_aptmt_query`
+WHERE id=:queryid' in E:\wamp\www\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 E:\wamp\www\yii\framework\db\CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 E:\wamp\www\atoznew\protected\controllers\BookappointmentController.php(20): CDbCommand->queryRow()
+#2 E:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): BookappointmentController->actionIndex()
+#3 E:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 E:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 E:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('index')
+#7 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('bookappointment...')
+#8 E:\wamp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#9 E:\wamp\www\atoznew\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/atoznew/index.php?r=bookappointment/index&id=85
+HTTP_REFERER=http://localhost/atoznew/index.php?r=site/listDocAppointment&doctorid=%1F%02%CE%8B%12%F5G%85%A9%B5%89%7D%8F%89%FC%7DL%A4%15%C4c%B8%C8%88%8E%E0%FDn%7C%FCX%AE&type=Appointment
+---
+2017/11/10 17:59:26 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in E:\wamp\www\yii\framework\web\CController.php:336
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 E:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#2 E:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('hospitaldr')
+#4 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('bookappointment...')
+#5 E:\wamp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#6 E:\wamp\www\atoznew\index.php(13): CApplication->run()
+#7 {main}
+REQUEST_URI=/atoznew/index.php?r=bookappointment/hospitaldr
+---
+2017/11/10 17:59:39 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in E:\wamp\www\yii\framework\web\CController.php:336
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 E:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#2 E:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('Hospitaldr')
+#4 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('bookappointment...')
+#5 E:\wamp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#6 E:\wamp\www\atoznew\index.php(13): CApplication->run()
+#7 {main}
+REQUEST_URI=/atoznew/index.php?r=bookappointment/Hospitaldr
+---
+2017/11/10 18:59:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "hospitalde".' in E:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('hospitalde')
+#1 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('hospitalde')
+#2 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('bookappointment...')
+#3 E:\wamp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 E:\wamp\www\atoznew\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/atoznew/index.php?r=bookappointment/hospitalde
+---
+2017/11/13 12:39:07 [error] [php] mcrypt_generic(): An empty string was passed (E:\wamp\www\yii\framework\base\CSecurityManager.php:225)
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionGetInfoDoctor()
+#1 E:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): SiteController->runAction()
+#3 E:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 E:\wamp\www\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#5 E:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): SiteController->filterAccessControl()
+#6 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#7 E:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#8 E:\wamp\www\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#9 E:\wamp\www\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#10 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 E:\wamp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#12 E:\wamp\www\atoznew\index.php(13): CWebApplication->run()
+REQUEST_URI=/atoznew/index.php?r=site/getInfoDoctor
+in E:\wamp\www\atoznew\protected\controllers\SiteController.php (225)
+in E:\wamp\www\atoznew\index.php (13)
+2017/11/14 15:11:25 [error] [exception.CException] exception 'CException' with message 'UserDetails and its behaviors do not have a method or closure named "searchInactiveHospialDoctor".' in E:\wamp\www\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 E:\wamp\www\yii\framework\db\ar\CActiveRecord.php(227): CComponent->__call('searchInactiveH...', Array)
+#1 E:\wamp\www\atoznew\protected\views\userDetails\manageInactiveHospitalDoctor.php(75): CActiveRecord->__call('searchInactiveH...', Array)
+#2 E:\wamp\www\atoznew\protected\views\userDetails\manageInactiveHospitalDoctor.php(75): UserDetails->searchInactiveHospialDoctor('hospital')
+#3 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\\wamp\\www\\ato...')
+#4 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\\wamp\\www\\ato...', Array, true)
+#5 E:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\\wamp\\www\\ato...', Array, true)
+#6 E:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('manageInactiveH...', Array, true)
+#7 E:\wamp\www\atoznew\protected\controllers\UserDetailsController.php(4878): CController->render('manageInactiveH...', Array)
+#8 [internal function]: UserDetailsController->actionManageInactiveHospitalDoctor('OTMy')
+#9 E:\wamp\www\yii\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(UserDetailsController), Array)
+#10 E:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(UserDetailsController), Object(ReflectionMethod), Array)
+#11 E:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 E:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#13 E:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('ManageInactiveH...')
+#15 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('userDetails/Man...')
+#16 E:\wamp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#17 E:\wamp\www\atoznew\index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/atoznew/index.php?r=userDetails/ManageInactiveHospitalDoctor&param1=OTMy
+HTTP_REFERER=http://localhost/atoznew/index.php?r=userDetails/manageHospitalDoctor&param1=OTMy
+---
+2017/11/14 18:26:35 [error] [php] Invalid argument supplied for foreach() (E:\wamp\www\yii\framework\web\helpers\CHtml.php:2524)
+Stack trace:
+#0 E:\wamp\www\atoznew\protected\views\userDetails\update_admin_doctor.php(504): CActiveForm->dropDownList()
+#1 E:\wamp\www\yii\framework\web\CBaseController.php(126): require()
+#2 E:\wamp\www\yii\framework\web\CBaseController.php(95): UserDetailsController->renderInternal()
+#3 E:\wamp\www\yii\framework\web\CController.php(869): UserDetailsController->renderFile()
+#4 E:\wamp\www\yii\framework\web\CController.php(782): UserDetailsController->renderPartial()
+#5 E:\wamp\www\atoznew\protected\controllers\UserDetailsController.php(1495): UserDetailsController->render()
+#6 unknown(0): UserDetailsController->actionUpdateAdminDoctor()
+#7 E:\wamp\www\yii\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs()
+#8 E:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#9 E:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#10 E:\wamp\www\yii\framework\web\CController.php(286): UserDetailsController->runAction()
+#11 E:\wamp\www\yii\framework\web\CController.php(265): UserDetailsController->runActionWithFilters()
+#12 E:\wamp\www\yii\framework\web\CWebApplication.php(282): UserDetailsController->run()
+#13 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 E:\wamp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 E:\wamp\www\atoznew\index.php(13): CWebApplication->run()
+REQUEST_URI=/atoznew/index.php?r=userDetails/updateAdminDoctor&id=%04%F4%EC%D8g%E9%E8R%9E%D1%AD%02q%92%C0%8Euw%09%98I%7E%EBtR%DC%3D%0D%EC%C3%DA%EF
+in E:\wamp\www\atoznew\protected\views\userDetails\update_admin_doctor.php (504)
+in E:\wamp\www\atoznew\protected\controllers\UserDetailsController.php (1495)
+in E:\wamp\www\atoznew\index.php (13)
+2017/11/17 11:54:31 [error] [exception.CException] exception 'CException' with message 'Property "LabBookDetails.hospital_id" is not defined.' in E:\wamp\www\yii\framework\base\CComponent.php:173
+Stack trace:
+#0 E:\wamp\www\yii\framework\db\ar\CActiveRecord.php(161): CComponent->__set('hospital_id', '932')
+#1 E:\wamp\www\atoznew\protected\views\bookappointment\hospitalService.php(41): CActiveRecord->__set('hospital_id', '932')
+#2 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\\wamp\\www\\ato...')
+#3 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\\wamp\\www\\ato...', Array, true)
+#4 E:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\\wamp\\www\\ato...', Array, true)
+#5 E:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('hospitalService', Array, true)
+#6 E:\wamp\www\atoznew\protected\controllers\BookappointmentController.php(300): CController->render('hospitalService', Array)
+#7 [internal function]: BookappointmentController->actionHospitalService('')
+#8 E:\wamp\www\yii\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(BookappointmentController), Array)
+#9 E:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(BookappointmentController), Object(ReflectionMethod), Array)
+#10 E:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 E:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 E:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('hospitalService')
+#14 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('bookappointment...')
+#15 E:\wamp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#16 E:\wamp\www\atoznew\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/atoznew/index.php?r=bookappointment/hospitalService&enquiry=
+HTTP_REFERER=http://localhost/atoznew/index.php?r=users/manageAppointmentServices
+---
+2017/11/17 11:55:20 [error] [exception.CException] exception 'CException' with message 'Property "LabBookDetails.hospital_id" is not defined.' in E:\wamp\www\yii\framework\base\CComponent.php:173
+Stack trace:
+#0 E:\wamp\www\yii\framework\db\ar\CActiveRecord.php(161): CComponent->__set('hospital_id', '932')
+#1 E:\wamp\www\atoznew\protected\views\bookappointment\hospitalService.php(41): CActiveRecord->__set('hospital_id', '932')
+#2 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\\wamp\\www\\ato...')
+#3 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\\wamp\\www\\ato...', Array, true)
+#4 E:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\\wamp\\www\\ato...', Array, true)
+#5 E:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('hospitalService', Array, true)
+#6 E:\wamp\www\atoznew\protected\controllers\BookappointmentController.php(300): CController->render('hospitalService', Array)
+#7 [internal function]: BookappointmentController->actionHospitalService('62')
+#8 E:\wamp\www\yii\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(BookappointmentController), Array)
+#9 E:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(BookappointmentController), Object(ReflectionMethod), Array)
+#10 E:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 E:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 E:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('hospitalService')
+#14 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('bookappointment...')
+#15 E:\wamp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#16 E:\wamp\www\atoznew\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/atoznew/index.php?r=bookappointment/hospitalService&enquiry=62
+HTTP_REFERER=http://localhost/atoznew/index.php?r=users/manageAppointmentServices
+---
+2017/11/17 12:38:03 [error] [exception.CException] exception 'CException' with message 'BookappointmentController and its behaviors do not have a method or closure named "renderPartail".' in E:\wamp\www\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 E:\wamp\www\atoznew\protected\views\bookappointment\hospitalService.php(304): CComponent->__call('renderPartail', Array)
+#1 E:\wamp\www\atoznew\protected\views\bookappointment\hospitalService.php(304): BookappointmentController->renderPartail('_statecity')
+#2 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\\wamp\\www\\ato...')
+#3 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\\wamp\\www\\ato...', Array, true)
+#4 E:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\\wamp\\www\\ato...', Array, true)
+#5 E:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('hospitalService', Array, true)
+#6 E:\wamp\www\atoznew\protected\controllers\BookappointmentController.php(300): CController->render('hospitalService', Array)
+#7 [internal function]: BookappointmentController->actionHospitalService('62')
+#8 E:\wamp\www\yii\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(BookappointmentController), Array)
+#9 E:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(BookappointmentController), Object(ReflectionMethod), Array)
+#10 E:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 E:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 E:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('hospitalService')
+#14 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('bookappointment...')
+#15 E:\wamp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#16 E:\wamp\www\atoznew\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/atoznew/index.php?r=bookappointment/hospitalService&enquiry=62
+HTTP_REFERER=http://localhost/atoznew/index.php?r=users/manageAppointmentServices
+---
+2017/11/17 15:33:24 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'appointment_id' in 'field list'. The SQL statement executed was: SELECT count(appointment_id)
+FROM `az_lab_book_details`
+WHERE  center_id = :center_id AND appointment_date = :appointment_date AND parent_hosp_id = :hospital_id AND time = '09:00:00'.
+in E:\wamp\www\atoznew\protected\models\PatientAppointmentDetails.php (314)
+in E:\wamp\www\atoznew\protected\views\bookappointment\monthcalender.php (32)
+in E:\wamp\www\atoznew\protected\controllers\BookappointmentController.php (200)
+2017/11/17 15:33:24 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'appointment_id' in 'field list'. The SQL statement executed was: SELECT count(appointment_id)
+FROM `az_lab_book_details`
+WHERE  center_id = :center_id AND appointment_date = :appointment_date AND parent_hosp_id = :hospital_id AND time = '09:00:00'' in E:\wamp\www\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 E:\wamp\www\yii\framework\db\CDbCommand.php(433): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 E:\wamp\www\atoznew\protected\models\PatientAppointmentDetails.php(314): CDbCommand->queryScalar()
+#2 E:\wamp\www\atoznew\protected\views\bookappointment\monthcalender.php(32): PatientAppointmentDetails->getServiceSlotsPerDay('17', '11', 1, '940', '932', 'service', 'count')
+#3 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\\wamp\\www\\ato...')
+#4 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\\wamp\\www\\ato...', Array, true)
+#5 E:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\\wamp\\www\\ato...', Array, true)
+#6 E:\wamp\www\atoznew\protected\controllers\BookappointmentController.php(200): CController->renderPartial('monthcalender', Array)
+#7 E:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): BookappointmentController->actionGetMonthCalendar()
+#8 E:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 E:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#10 E:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('getMonthCalenda...')
+#12 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('bookappointment...')
+#13 E:\wamp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#14 E:\wamp\www\atoznew\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/atoznew/index.php?r=bookappointment/getMonthCalendar&month=11&year=17&calendar_id=1&is_clinic=service&hospitalid=932&doctid=940
+HTTP_REFERER=http://localhost/atoznew/index.php?r=bookappointment/hospitalService&enquiry=62
+---
+2017/11/17 15:34:14 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'time' in 'where clause'. The SQL statement executed was: SELECT count(book_id)
+FROM `az_lab_book_details`
+WHERE  center_id = :center_id AND appointment_date = :appointment_date AND parent_hosp_id = :hospital_id AND time = '09:00:00'.
+in E:\wamp\www\atoznew\protected\models\PatientAppointmentDetails.php (314)
+in E:\wamp\www\atoznew\protected\views\bookappointment\monthcalender.php (32)
+in E:\wamp\www\atoznew\protected\controllers\BookappointmentController.php (200)
+2017/11/17 15:34:14 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'time' in 'where clause'. The SQL statement executed was: SELECT count(book_id)
+FROM `az_lab_book_details`
+WHERE  center_id = :center_id AND appointment_date = :appointment_date AND parent_hosp_id = :hospital_id AND time = '09:00:00'' in E:\wamp\www\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 E:\wamp\www\yii\framework\db\CDbCommand.php(433): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 E:\wamp\www\atoznew\protected\models\PatientAppointmentDetails.php(314): CDbCommand->queryScalar()
+#2 E:\wamp\www\atoznew\protected\views\bookappointment\monthcalender.php(32): PatientAppointmentDetails->getServiceSlotsPerDay('17', '11', 1, '940', '932', 'service', 'count')
+#3 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\\wamp\\www\\ato...')
+#4 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\\wamp\\www\\ato...', Array, true)
+#5 E:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\\wamp\\www\\ato...', Array, true)
+#6 E:\wamp\www\atoznew\protected\controllers\BookappointmentController.php(200): CController->renderPartial('monthcalender', Array)
+#7 E:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): BookappointmentController->actionGetMonthCalendar()
+#8 E:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 E:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#10 E:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('getMonthCalenda...')
+#12 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('bookappointment...')
+#13 E:\wamp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#14 E:\wamp\www\atoznew\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/atoznew/index.php?r=bookappointment/getMonthCalendar&month=11&year=17&calendar_id=1&is_clinic=service&hospitalid=932&doctid=940
+HTTP_REFERER=http://localhost/atoznew/index.php?r=bookappointment/hospitalService&enquiry=62
+---
+2017/11/17 19:14:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "hosServicewAppointment".' in E:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('hosServicewAppo...')
+#1 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('hosServicewAppo...')
+#2 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('users/hosServic...')
+#3 E:\wamp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 E:\wamp\www\atoznew\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/atoznew/index.php?r=users/hosServicewAppointment
+HTTP_REFERER=http://localhost/atoznew/index.php?r=users/manageAppointmentServices
+---
+2017/11/17 19:39:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "manageAppointmentServices".' in E:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('manageAppointme...')
+#1 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('manageAppointme...')
+#2 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('users/manageApp...')
+#3 E:\wamp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 E:\wamp\www\atoznew\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/atoznew/index.php?r=users/manageAppointmentServices
+HTTP_REFERER=http://localhost/atoznew/index.php?r=users/manageHospitalServices
+---
+2017/11/19 13:59:40 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '``, ``patient_id``, ``role_id``, ``center_id``, ``relation``, ``other_relation_d' at line 1. The SQL statement executed was: SELECT ``book_id``, ``patient_id``, ``role_id``, ``center_id``, ``relation``, ``other_relation_dis``, ``full_name`` AS `patient_name`, ``mobile_no`` AS `patient_mobile`, ``patient_age``, ``service_name``, ``discription_doc``, ``total_charges``, ``collect_home``, ``blood_group``, ``no_of_unit``, ``status``, ``pincode``, ``country_id``, ``country_name``, ``state_id``, ``state_name``, ``city_id``, ``city_name``, ``area_id``, ``area_name``, ``landmark``, ``address``, ``parent_hosp_id``, `appointment_date` AS `preferred_day`
+FROM `az_lab_book_details`
+WHERE (mobile_no=:mobile AND center_id=:center_id ) AND (status = :status ).
+in E:\wamp\www\atoznew\protected\controllers\SiteController.php (430)
+in E:\wamp\www\atoznew\index.php (13)
+2017/11/19 13:59:40 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '``, ``patient_id``, ``role_id``, ``center_id``, ``relation``, ``other_relation_d' at line 1. The SQL statement executed was: SELECT ``book_id``, ``patient_id``, ``role_id``, ``center_id``, ``relation``, ``other_relation_dis``, ``full_name`` AS `patient_name`, ``mobile_no`` AS `patient_mobile`, ``patient_age``, ``service_name``, ``discription_doc``, ``total_charges``, ``collect_home``, ``blood_group``, ``no_of_unit``, ``status``, ``pincode``, ``country_id``, ``country_name``, ``state_id``, ``state_name``, ``city_id``, ``city_name``, ``area_id``, ``area_name``, ``landmark``, ``address``, ``parent_hosp_id``, `appointment_date` AS `preferred_day`
+FROM `az_lab_book_details`
+WHERE (mobile_no=:mobile AND center_id=:center_id ) AND (status = :status )' in E:\wamp\www\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 E:\wamp\www\yii\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 E:\wamp\www\atoznew\protected\controllers\SiteController.php(430): CDbCommand->queryAll()
+#2 E:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionFindServicePatient()
+#3 E:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 E:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 E:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 E:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 E:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#10 E:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('findServicePati...')
+#12 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/findServic...')
+#13 E:\wamp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#14 E:\wamp\www\atoznew\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/atoznew/index.php?r=site/findServicePatient
+HTTP_REFERER=http://localhost/atoznew/index.php?r=bookappointment/hospitalService
+---
+2017/11/19 14:01:10 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '``, ``patient_id``, ``role_id``, ``center_id``, ``relation``, ``other_relation_d' at line 1. The SQL statement executed was: SELECT ``book_id``, ``patient_id``, ``role_id``, ``center_id``, ``relation``, ``other_relation_dis``, ``full_name`` AS `patient_name`, ``mobile_no`` AS `patient_mobile`, ``patient_age``, ``service_name``, ``discription_doc``, ``total_charges``, ``collect_home``, ``blood_group``, ``no_of_unit``, ``status``, ``pincode``, ``country_id``, ``country_name``, ``state_id``, ``state_name``, ``city_id``, ``city_name``, ``area_id``, ``area_name``, ``landmark``, ``address``, ``parent_hosp_id``, ``appointment_date`` AS `preferred_day`
+FROM `az_lab_book_details`
+WHERE (mobile_no=:mobile AND center_id=:center_id ) AND (status = :status ).
+in E:\wamp\www\atoznew\protected\controllers\SiteController.php (430)
+in E:\wamp\www\atoznew\index.php (13)
+2017/11/19 14:01:10 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '``, ``patient_id``, ``role_id``, ``center_id``, ``relation``, ``other_relation_d' at line 1. The SQL statement executed was: SELECT ``book_id``, ``patient_id``, ``role_id``, ``center_id``, ``relation``, ``other_relation_dis``, ``full_name`` AS `patient_name`, ``mobile_no`` AS `patient_mobile`, ``patient_age``, ``service_name``, ``discription_doc``, ``total_charges``, ``collect_home``, ``blood_group``, ``no_of_unit``, ``status``, ``pincode``, ``country_id``, ``country_name``, ``state_id``, ``state_name``, ``city_id``, ``city_name``, ``area_id``, ``area_name``, ``landmark``, ``address``, ``parent_hosp_id``, ``appointment_date`` AS `preferred_day`
+FROM `az_lab_book_details`
+WHERE (mobile_no=:mobile AND center_id=:center_id ) AND (status = :status )' in E:\wamp\www\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 E:\wamp\www\yii\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 E:\wamp\www\atoznew\protected\controllers\SiteController.php(430): CDbCommand->queryAll()
+#2 E:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionFindServicePatient()
+#3 E:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 E:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 E:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 E:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 E:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#10 E:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('findServicePati...')
+#12 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/findServic...')
+#13 E:\wamp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#14 E:\wamp\www\atoznew\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/atoznew/index.php?r=site/findServicePatient
+HTTP_REFERER=http://localhost/atoznew/index.php?r=bookappointment/hospitalService
+---
+2017/11/19 14:10:30 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'preferred_day' in 'field list'. The SQL statement executed was: SELECT book_id, patient_id, role_id, center_id, relation, other_relation_dis, full_name as patient_name, mobile_no as patient_mobile, patient_age, service_name, discription_doc, total_charges, collect_home, blood_group, no_of_unit, status, pincode, country_id, country_name, state_id, state_name, city_id, city_name, area_id,area_name, landmark, address, parent_hosp_id,DATE_FORMAT(preferred_day, "%d-%c-%Y") as preferred_day
+FROM `az_lab_book_details`
+WHERE (mobile_no=:mobile AND center_id=:center_id ) AND (status = :status ).
+in E:\wamp\www\atoznew\protected\controllers\SiteController.php (430)
+in E:\wamp\www\atoznew\index.php (13)
+2017/11/19 14:10:30 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'preferred_day' in 'field list'. The SQL statement executed was: SELECT book_id, patient_id, role_id, center_id, relation, other_relation_dis, full_name as patient_name, mobile_no as patient_mobile, patient_age, service_name, discription_doc, total_charges, collect_home, blood_group, no_of_unit, status, pincode, country_id, country_name, state_id, state_name, city_id, city_name, area_id,area_name, landmark, address, parent_hosp_id,DATE_FORMAT(preferred_day, "%d-%c-%Y") as preferred_day
+FROM `az_lab_book_details`
+WHERE (mobile_no=:mobile AND center_id=:center_id ) AND (status = :status )' in E:\wamp\www\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 E:\wamp\www\yii\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 E:\wamp\www\atoznew\protected\controllers\SiteController.php(430): CDbCommand->queryAll()
+#2 E:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionFindServicePatient()
+#3 E:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 E:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 E:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 E:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 E:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#10 E:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('findServicePati...')
+#12 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/findServic...')
+#13 E:\wamp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#14 E:\wamp\www\atoznew\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/atoznew/index.php?r=site/findServicePatient
+HTTP_REFERER=http://localhost/atoznew/index.php?r=bookappointment/hospitalService
+---
+2017/11/19 14:10:40 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'preferred_day' in 'field list'. The SQL statement executed was: SELECT book_id, patient_id, role_id, center_id, relation, other_relation_dis, full_name as patient_name, mobile_no as patient_mobile, patient_age, service_name, discription_doc, total_charges, collect_home, blood_group, no_of_unit, status, pincode, country_id, country_name, state_id, state_name, city_id, city_name, area_id,area_name, landmark, address, parent_hosp_id,DATE_FORMAT(preferred_day, "%d-%c-%Y") as preferred_day
+FROM `az_lab_book_details`
+WHERE (mobile_no=:mobile AND center_id=:center_id ) AND (status = :status ).
+in E:\wamp\www\atoznew\protected\controllers\SiteController.php (430)
+in E:\wamp\www\atoznew\index.php (13)
+2017/11/19 14:10:40 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'preferred_day' in 'field list'. The SQL statement executed was: SELECT book_id, patient_id, role_id, center_id, relation, other_relation_dis, full_name as patient_name, mobile_no as patient_mobile, patient_age, service_name, discription_doc, total_charges, collect_home, blood_group, no_of_unit, status, pincode, country_id, country_name, state_id, state_name, city_id, city_name, area_id,area_name, landmark, address, parent_hosp_id,DATE_FORMAT(preferred_day, "%d-%c-%Y") as preferred_day
+FROM `az_lab_book_details`
+WHERE (mobile_no=:mobile AND center_id=:center_id ) AND (status = :status )' in E:\wamp\www\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 E:\wamp\www\yii\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 E:\wamp\www\atoznew\protected\controllers\SiteController.php(430): CDbCommand->queryAll()
+#2 E:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionFindServicePatient()
+#3 E:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 E:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 E:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 E:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 E:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#10 E:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('findServicePati...')
+#12 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/findServic...')
+#13 E:\wamp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#14 E:\wamp\www\atoznew\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/atoznew/index.php?r=site/findServicePatient
+HTTP_REFERER=http://localhost/atoznew/index.php?r=bookappointment/hospitalService
+---
+2017/11/19 14:18:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "manageAppointmentServices".' in E:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('manageAppointme...')
+#1 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('manageAppointme...')
+#2 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('users/manageApp...')
+#3 E:\wamp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 E:\wamp\www\atoznew\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/atoznew/index.php?r=users/manageAppointmentServices
+HTTP_REFERER=http://localhost/atoznew/index.php?r=bookappointment/hospitalService
+---

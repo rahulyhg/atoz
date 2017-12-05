@@ -1,0 +1,85 @@
+<?php
+/* @var $this UserDetailsController */
+/* @var $model UserDetails */
+
+$this->breadcrumbs=array(
+	'User Details'=>array('index'),
+	$model->user_id,
+);
+
+$this->menu=array(
+	array('label'=>'List UserDetails', 'url'=>array('index')),
+	array('label'=>'Create UserDetails', 'url'=>array('create')),
+	array('label'=>'Update UserDetails', 'url'=>array('update', 'id'=>$model->user_id)),
+	array('label'=>'Delete UserDetails', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->user_id),'confirm'=>'Are you sure you want to delete this item?')),
+	array('label'=>'Manage UserDetails', 'url'=>array('admin')),
+);
+?>
+
+<h1>View UserDetails #<?php echo $model->user_id; ?></h1>
+
+<?php $this->widget('zii.widgets.CDetailView', array(
+	'data'=>$model,
+	'attributes'=>array(
+		'user_id',
+		'role_id',
+		'profile_image',
+		'first_name',
+		'last_name',
+		'gender',
+		'birth_date',
+		'age',
+		'blood_group',
+		'mobile',
+		'password',
+		'apt_contact_no_1',
+		'apt_contact_no_2',
+		'email_1',
+		'email_2',
+		'country_id',
+		'state_id',
+		'city_id',
+		'area_id',
+		'pincode',
+		'country_name',
+		'state_name',
+		'city_name',
+		'area_name',
+		'experience',
+		'doctor_fees',
+		'hospital_name',
+		'type_of_hospital',
+		'hospital_registration_no',
+		'hos_establishment',
+		'hos_validity',
+		'type_of_establishment',
+		'total_no_of_bed',
+		'emergency_no_1',
+		'emergency_no_2',
+		'ambulance_no_1',
+		'ambulance_no_2',
+		'tollfree_no_1',
+		'tollfree_no_2',
+		'landline_1',
+		'landline_2',
+		'take_home',
+		'blood_bank_no',
+		'payment_type',
+		'longitude',
+		'latitude',
+		'hospital_open_time',
+		'hospital_close_time',
+		'description',
+		'coordinator_name_1',
+		'coordinator_name_2',
+		'coordinator_mobile_1',
+		'coordinator_mobile_2',
+		'coordinator_email_1',
+		'coordinator_email_2',
+		'created_date',
+		'created_by',
+		'updated_date',
+		'updated_by',
+		'is_active',
+	),
+)); ?>

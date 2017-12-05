@@ -1,0 +1,68 @@
+<ion-view class="" cache-view="false">
+    <div ng-include="'templates/site/site-header.html'">
+    </div>
+    <div class="bar bar-subheader site-view">
+        <div class="row">
+            <div class="col col-67">
+                <span class="calm capitalizeword text-underline">{{home.selectedSpeciality| filter }}</span>
+            </div>
+            <div class="col col-33 assertive text-right sortoption" >
+                <select class="minimal" name="sortby" id="sort" ng-change="searchServiceList(home.selectedServiceType)" ng-model="home.selectedSortby" >
+                    <option value="">Sort By</option>
+                    <option value="Experience">Experience</option>
+                    <option value="Rating">Rating</option>
+                    <option value="beds-strength" ng-if="home.selectedServiceType == 'hospital'">Beds Strength</option>                                
+                </select>
+            </div>
+        </div>
+    </div>
+    <ion-content class="has-header has-subheader">
+
+        <div class="list searchlist">
+
+            <a class="item item-thumbnail-left searchresult" ng-repeat="row in searchResult.resultdata">
+                <!--                <img ng-src="{{home.atoz_upload + row.profile_image}}" class="rounded-img" ng-click="details(row.user_id, null, row.role_id)">-->
+
+                <img ng-src="{{row.profile_image != null ? home.atoz_upload + row.profile_image : 'img/hospital.png'}}" class="rounded-img" ng-if="row.role_id == 5" ng-click="details(row.user_id, null, row.role_id)">
+                <img  ng-src="{{row.profile_image != null ? home.atoz_upload + row.profile_image : 'img/pathologylabs.png'}}" class="rounded-img" ng-if="row.role_id == 6" ng-click="details(row.user_id, null, row.role_id)">
+                <img ng-src="{{row.profile_image != null ? home.atoz_upload + row.profile_image : 'img/diagnosticscenter.png'}}" class="rounded-img" ng-if="row.role_id == 7" ng-click="details(row.user_id, null, row.role_id)">
+                <img ng-src="{{row.profile_image != null ? home.atoz_upload + row.profile_image : 'img/bloodbanks.png'}}" class="rounded-img" ng-if="row.role_id == 8" ng-click="details(row.user_id, null, row.role_id)">
+                <img ng-src="{{row.profile_image != null ? home.atoz_upload + row.profile_image : 'img/medicalstores.png'}}" class="rounded-img" ng-if="row.role_id == 9" ng-click="details(row.user_id, null, row.role_id)">
+
+                <h3 style="text-transform: capitalize;" ng-click="details(row.user_id, null, row.role_id)">{{row.hospital_name}} </h3>
+                <h5 ng-click="details(row.user_id, null, row.role_id)">{{row.type_of_hospital}}</h5>
+                <h4>{{row.address + ", " + row.area_name + ", " + row.city_name + ", " + row.state_name| trimCharactor : ',' }}</h4>
+                <h3 ng-if="row.role_id == 5">No.of Beds - {{ (row.total_no_of_bed != null && row.total_no_of_bed != 0) ? row.total_no_of_bed : "NA"}}</h3>
+                <p>{{row.description| limitTo : 100}} </p>
+
+                <div class="row">
+                    <h4 class="col col-66">
+                        Established in - {{ (row.hos_establishment != null && row.hos_establishment != '1970') ? row.hos_establishment : "NA" | date :'y'}}
+                    </h4>
+                    <h4 class="col col-33">
+                        Review - {{row.ratecount}}
+                    </h4>
+                </div>
+                <div class="row">
+                    <h4 class="col col-100"  ng-if="row.role_id == 5">
+                        No Of Doctors - {{row.doctorcnt}}
+                    </h4>
+                </div>
+                <div class="row">
+                    <h4 class="col col-50">
+                        <button class="button button-small button-calm" ng-click="bookHosAppointment('serviceType', {type: home.selectedServiceType, userid: row.user_id, roleid: row.role_id})" ng-if="row.role_id == 5">Book Appointment</button>
+                        <button class="button button-small button-calm" ng-click="bookLabAppointment('serviceType', {type: home.selectedServiceType,userid: row.user_id, roleid: row.role_id})" ng-if="row.role_id == 6">Book Test</button>
+                        <button class="button button-small button-calm" ng-click="bookLabAppointment('serviceType', {type: home.selectedServiceType, userid: row.user_id, roleid: row.role_id})" ng-if="row.role_id == 7">Book Test</button>
+                        <button class="button button-small button-calm" ng-click="bookLabAppointment('serviceType', {type: home.selectedServiceType, userid: row.user_id, roleid: row.role_id})" ng-if="row.role_id == 8">Book Blood </button>
+                        <button class="button button-small button-calm" ng-click="bookLabAppointment('serviceType', {type: home.selectedServiceType, userid: row.user_id, roleid: row.role_id})" ng-if="row.role_id == 9">Book Medicine</button>
+                    </h4>
+                    <h4 class="col col-50" style="padding-top: 13px;">
+                        <span ng-if="row.saving != '' && row.saving != null ">Saving Upto {{row.saving}} % </span>
+                    </h4>
+                </div>
+                
+            </a>
+
+        </div>
+    </ion-content>
+</ion-view>

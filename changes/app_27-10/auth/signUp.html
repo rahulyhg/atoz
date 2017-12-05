@@ -1,0 +1,66 @@
+<ion-view class="signup-view auth-view" cache-view="false">
+    <ion-content scroll="true">
+        <div class="row">
+            <div class="col col-50"></div>
+            <div class="col col-50 assertive text-right">
+                Emergency 
+                <img src="img/emergency.png" width="32" class="" style="vertical-align:middle" />
+            </div>
+        </div>
+        <div class="login-section">
+            <div class="row">
+                <div class="col col-75 automargin text-center stable">
+
+                    <div class="login-container">
+                        <div class="item-body">
+                            <div ng-show="error" class="alert alert-danger assertive"> {{error}}</div>
+                            <form name="signup_form" class="" novalidate ng-cloak ng-show="user.firststep">
+                                <div class="list">
+                                        <!--<ion-radio ng-model="user.patienttype" ng-value="'Individual'">Individual</ion-radio>
+                                        <ion-radio ng-model="user.patienttype" ng-value="'Corporate'">Corporate</ion-radio>-->
+                                    <label class="item1 item-input item-floating-label ">
+                                        <span class="input-label stable text-left">First Name</span>
+                                        <input type="text" placeholder="Enter Firstname" name="user_firstname" class="stable" ng-model="user.firstname" required maxlength="30">
+                                    </label>
+                                    <label class="item1 item-input item-floating-label ">
+                                        <span class="input-label stable text-left">Last Name</span>
+                                        <input type="text" placeholder="Enter Lastname" name="user_lastname" class="stable" ng-model="user.lastname" required maxlength="30">
+                                    </label>
+                                    <label class="item1 item-input item-floating-label">
+                                        <span class="input-label stable text-left">Mobile No</span>
+                                        <input type="text" placeholder="Enter Mobile No" name="user_mobile" ng-model="user.mobile" required show-hide-input>
+                                    </label>
+                                    <label class="item1 item-input item-floating-label">
+                                        <span class="input-label stable text-left">Password</span>
+                                        <input type="password" placeholder="Enter Password" name="user_password" ng-model="user.password" required show-hide-input>
+                                    </label>
+                                </div>
+                                <button type="submit" class="button button-balanced button-small button-block icon-right " ng-click="sendRegOtp()" ng-disabled=" (signup_form.user_firstname.$invalid || signup_form.user_mobile.$invalid || signup_form.user_lastname.$invalid || signup_form.user_password.$invalid) ? true : false">
+                                    Send OTP <i class="icon ion-paper-airplane"></i> 
+                                </button>
+                                <a href="#/login">Log In</a>
+                            </form>
+                            <form name="reg_otp_form" class="" novalidate ng-cloak ng-show="user.secondstep">
+                                <div class="list">
+                                    <label class="item1 item-input item-floating-label">
+                                        <span class="input-label stable text-left">OTP</span>
+                                        <input type="text" placeholder="Enter OTP" name="user_otp" ng-model="user.otp" required show-hide-input>
+                                    </label>
+                                </div>
+                                <button type="submit" class="button button-balanced button-small button-block icon-right " ng-click="confOtpReg()" ng-disabled=" (reg_otp_form.user_otp.$invalid) ? true : false">
+                                    Confirm OTP & Register<i class="icon ion-log-in"></i> 
+                                </button>
+                                <a href="#/login">Log In</a>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+
+    </ion-content>
+
+</ion-view>

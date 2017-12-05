@@ -1,0 +1,99 @@
+
+<ion-view class="" cache-view="false">
+    <div ng-include="'templates/site/site-header.html'">
+    </div>
+    <div class="bar bar-subheader site-view">
+        <div class="row">
+            <div class="col col-67">
+                <span class="calm capitalizeword text-underline">{{home.selectedSpeciality| filter }}</span>
+            </div>
+            <div class="col col-33 assertive text-right">
+                
+                <span ng-click="goback()"><i class="icon ion-ios-arrow-back"></i><i class="icon ion-ios-arrow-back"></i> Back</span>
+            </div>
+        </div>
+    </div>
+    <ion-content class="has-header has-subheader">
+        <div class="list">
+
+            <div class="item item-thumbnail-left searchresult">
+                <img ng-src="{{home.atoz_upload + searchResult.profile_image}}" class="rounded-img">
+                <h3 >{{searchResult.first_name + " " + searchResult.last_name}} </h3>
+                <h5>{{searchResult.doctordegree}}</h5>
+                <h4 class="no-overflow">{{searchResult.address + ", " + searchResult.area_name + ", " + searchResult.city_name + ", " + searchResult.state_name| trimCharactor : ',' }}</h4>
+                <h3 >{{searchResult.clinic_name}} </h3>
+                <p>{{searchResult.description}} </p>
+            </div>
+            <div class="row detailspage">
+                <h6 class="col col-25 text-center">
+                    Fees - {{ (searchResult.fees != null && searchResult.fees != 0) ? searchResult.fees + " Rs" : "NA"}} <br><br>
+                    Exp - {{searchResult.experience| calculateAge}} 
+                </h6>
+                <h6 class="col col-50 text-center">
+                    Hours of Operation <br>
+                    <span ng-if="searchResult.parent_hosp_id == null">
+                        <span ng-switch="searchResult.is_open_allday">
+                            <span ng-switch-when="Y">24 X 7</span>
+                            <span ng-switch-when="N">
+                                <span ng-repeat="row in searchResult.visit_details" ng-if="row.day == (CurrentDate | date:'EEE' | lowercase)" >
+                                    Today {{ row.clinic_open_time | myformateTime | date : 'h:mm a' }} - {{ row.clinic_close_time | myformateTime | date : 'h:mm a' }} <br>
+                                    & {{ row.clinic_eve_open_time | myformateTime | date : 'h:mm a' }} - {{ row.clinic_eve_close_time | myformateTime | date : 'h:mm a' }}<br>
+                                    
+                                </span>
+                                <div ng-click ="openModal(3)" class="text-center">(View All)</div>
+                            </span>
+                        </span>
+                    </span>
+                    <span ng-if="searchResult.parent_hosp_id != null">
+                        <span ng-switch="searchResult.is_open_allday">
+                            <span ng-switch-when="Y">24 X 7</span>
+                            <span ng-switch-when="N">
+                                <span >
+                                     {{ searchResult.hospital_open_time | myformateTime | date : 'h:mm a' }} - {{ searchResult.hospital_close_time | myformateTime | date : 'h:mm a' }} <br>
+                                </span>
+                            </span>
+                        </span>
+                    </span>
+                    
+                </h6>
+                <h6 class="col col-25 text-center">
+                    <button class="button button-small button-calm" ng-click="bookAppointment('details',{userid : searchResult.user_id, clinicid : searchResult.clinic_id, roleid : searchResult.role_id, docid : searchResult.user_id , docfee : searchResult.doctor_fees , apt_contact_no_1 : searchResult.apt_contact_no_1, city_name : searchResult.city_name ,state_name : searchResult.state_name,country_name : searchResult.country_name,address : searchResult.address,area_name: searchResult.area_name,dr_name: searchResult.first_name+' '+searchResult.last_name})">Book your Appointment</button>
+                </h6>
+            </div>
+        </div>
+        
+        <div class="custom-tab-container bg-color1" content-tabs tabsdata='tabsdata'>
+            <my-tabs>
+                <my-tab title="Services" tabimg = "services.png">
+                    <ul>
+                        <li ng-repeat="servicerow in searchResult.user_service">
+                            <div class="row">
+                                <span class="col col-50 text-center">
+                                    {{servicerow.service_name}}
+                                </span>
+                                <span class="col col-50 text-center">
+                                    {{servicerow.service_discount != null ? servicerow.service_discount+"%": ""}}
+                                </span>
+                            
+                            </div>
+                        </li>
+                    </ul>
+                    
+                </my-tab>
+                <my-tab title="Location Map" tabimg='locationmap.png'>
+                    <div id="map" data-tap-disabled="true"></div>
+                </my-tab>
+                <my-tab title="Gallery" tabimg='gallery.png'>
+                    <div class="row" ng-repeat="image in searchResult.user_photos" ng-if="$index % 2 === 0">
+                        <div class="col col-50" ng-if="$index < searchResult.user_photos.length">
+                            <img ng-src="{{home.atoz_upload + searchResult.user_photos[$index].document}}" width="100%" height="150" />
+                        </div>
+                        <div class="col col-50" ng-if="$index + 1 < searchResult.user_photos.length">
+                            <img ng-src="{{home.atoz_upload + searchResult.user_photos[$index + 1].document}}" width="100%" height="150" />
+                        </div>
+                    </div>
+                </my-tab>
+            </my-tabs>
+        </div>
+    </ion-content>
+</ion-view>

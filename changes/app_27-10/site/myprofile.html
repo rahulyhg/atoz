@@ -1,0 +1,105 @@
+<ion-view class="" cache-view="false">
+    <ion-content class="myappointment">
+        <div class="padding">
+            <img src="img/logo.png" class="" style="" height="32" ng-click="gotostate('site')"/>
+        </div>
+        <div class="profilebg padding">
+            <div class="img-container">
+                <img ng-src="{{appData.profile_image != nulll ? home.atoz_upload + appData.profile_image : 'img/patient.png'}}" class="" >
+                <div class="editbtn" ng-click="gotostate('profileEdit')">
+                    Profile Edit
+                </div>
+            </div>
+
+            <ul class="" style="padding-top: 20px; ">
+                <li class="">
+                    {{appData.first_name}} {{appData.last_name}}
+                </li>
+                <li class="">
+                    {{appData.mobile}}
+                </li>
+                <li class="" ng-if="appData.email_1">
+                    {{appData.email_1}}
+                </li>
+                <li class="" ng-if="appData.address">
+                    {{appData.address}}
+                </li>
+
+            </ul>
+        </div>
+        <h5 class="padding text-center" ng-if="appData.role_id == 4 && searchResult.resultdata[itemIndex].apt_confirm  == 'No' ">Requested Appointment Details</h5>
+        <h5 class="padding text-center" ng-if="appData.role_id == 4 && searchResult.resultdata[itemIndex].apt_confirm  != 'No' "> Appointment Details</h5>
+        <h5 class="padding text-center" ng-if="searchResult.resultdata[itemIndex].apt_confirm  == 'No' && appData.role_id == 3">Requested Appointment Details</h5>
+        <h5 class="padding text-center" ng-if="searchResult.resultdata[itemIndex].apt_confirm  != 'No' && appData.role_id == 3"> Appointment Details</h5>
+        <div class="padding text-center appointlist slide-in-both-ways">
+            <table style="width: 100%;">
+                <tr>
+                    <td class="">
+                        <img src="img/arrow-left-white.png" class=" arrow-btn" ng-click="getPrevAppointment()" ng-show="0 !== itemIndex">
+                    </td>
+                    <td class="" ng-if="appData.role_id == 4">
+                        <div class="capitalizeword boldtext black2">{{searchResult.resultdata[itemIndex].appointment_id != null ? searchResult.resultdata[itemIndex].provider_name : ''| splitWord : 0}}</div>
+                        <div class="capitalizeword boldtext black2">{{searchResult.resultdata[itemIndex].first_name != null ? searchResult.resultdata[itemIndex].first_name+" "+searchResult.resultdata[itemIndex].last_name : ''}}</div>
+                        
+                        <div class="black1">{{searchResult.resultdata[itemIndex].speciality}}</div>
+                        <div class="black1">{{searchResult.resultdata[itemIndex].doctor_name != null ? searchResult.resultdata[itemIndex].doctor_name : ''| splitWord : 1}}</div>
+                        <div class="black1">{{searchResult.resultdata[itemIndex].doctor_name != null ? searchResult.resultdata[itemIndex].doctor_name : ''| splitWord : 0}}</div>
+                       
+                        <div class="black1">{{searchResult.resultdata[itemIndex].clinic_name}}</div>
+                        <div class="black1">{{searchResult.resultdata[itemIndex].appointment_id != null ? 'Address : ' + searchResult.resultdata[itemIndex].provider_name : ''| splitWord : 1}}</div>
+                        <div class="boldtext black2"> 
+                            {{searchResult.resultdata[itemIndex].aptdate != null ? 'Date :'+ searchResult.resultdata[itemIndex].aptdate : ''}}
+                            {{searchResult.resultdata[itemIndex].time != null ?  'Time :'+searchResult.resultdata[itemIndex].time : ''}}
+                        </div>
+                    </td>
+
+                    <td class="" ng-if="appData.role_id == 3">
+                        
+                        <div class="capitalizeword boldtext black2">{{searchResult.resultdata[itemIndex].first_name != null ? searchResult.resultdata[itemIndex].first_name+" "+searchResult.resultdata[itemIndex].last_name : ''}}</div>
+                        <div class="black2">{{searchResult.resultdata[itemIndex].mobile}}</div>
+                        <div class="black2">{{searchResult.resultdata[itemIndex].clinic_name}}</div>
+                 
+                        <div class="boldtext black2"> 
+                            {{searchResult.resultdata[itemIndex].aptdate != null ? 'Date :'+ searchResult.resultdata[itemIndex].aptdate : ''}}</div>
+                        <div class="boldtext black2"> 
+                            {{searchResult.resultdata[itemIndex].time != null ?  'Time :'+searchResult.resultdata[itemIndex].time : ''}}
+                        </div>
+                    </td>
+                    <td class="" ng-if="appData.role_id == 6 || appData.role_id == 7 || appData.role_id == 8 || appData.role_id == 9">
+                        
+                        <div class="capitalizeword boldtext black2">{{searchResult.resultdata[itemIndex].full_name != null ? searchResult.resultdata[itemIndex].full_name : ''}}</div>
+                        <div class="black2">{{searchResult.resultdata[itemIndex].mobile_no}}</div>
+                        <div class="black2">{{searchResult.resultdata[itemIndex].service_name != null ? searchResult.resultdata[itemIndex].service_name : ''}}</div>
+                        <div class="black2">{{searchResult.resultdata[itemIndex].collect_home == "Y" ? "Pick @ "+searchResult.resultdata[itemIndex].patient_address : ''}}</div>
+                        <div class="boldtext black2"> 
+                            {{searchResult.resultdata[itemIndex].aptdate != null ? 'Date :'+ searchResult.resultdata[itemIndex].aptdate : ''}}</div>
+                        <div class="boldtext black2"> 
+                            {{searchResult.resultdata[itemIndex].time != null ?  'Time :'+searchResult.resultdata[itemIndex].time : ''}}
+                        </div>
+                    </td>
+                    <td ng-if="searchResult.resultdata.length == 0">No Records Found</td>
+
+
+                    <td class="">
+                        <img src="img/arrow-right-white.png" class=" arrow-btn" ng-click="getNextAppointment()" ng-show="searchResult.resultdata.length >0 && searchResult.resultdata.length - 1 !== itemIndex ">
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="padding-bottom tabs-striped">
+            <div class="tabs light-bg ">
+                <a class="tab-item" ng-click="myProfile({{appData.user_id}})">
+                    Appointment
+                </a>
+                <a class="tab-item"  ng-click="appointmentRequest()" ng-if="appData.role_id == 3 || appData.role_id == 4">
+                    Request
+                </a>
+                <a class="tab-item" href="#/site">
+                    Home
+                </a>
+
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

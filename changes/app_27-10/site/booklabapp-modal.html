@@ -1,0 +1,141 @@
+<ion-modal-view>
+    <ion-header-bar>
+        <h1 class = "title" ng-if="home.role_id == 6">Book Your Lab</h1>
+        <h1 class = "title" ng-if="home.role_id == 7">Book Your Diagnostic Center</h1>
+        <h1 class = "title" ng-if="home.role_id == 8">Book Your Blood Bank</h1>
+        <h1 class = "title" ng-if="home.role_id == 9">Book Your Store</h1>
+        <div class="buttons">
+            <button class = "button icon icon-left ion-ios-close-outline"  ng-click = "custommodal.hide()">Close</button>
+        </div>
+    </ion-header-bar>
+
+    <ion-content class="bg-color1 padding-top padding-bottom">
+        <form name="labappointform">
+            <div class="list list-inset" ng-show="home.thirdstep">
+                <div class="item">
+                    <h2 class="balanced text-center">{{home.successmsg}}</h2>
+                    <h2 class="danger text-center">{{home.errormsg}}</h2>
+                </div>
+            </div>
+            <div class="list list-inset" ng-show="home.firststep">
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Relation</span>
+                    <select class="minimal item-input" name="sortby" id="sort" ng-model="home.relation" style="width:100%;">
+                        <option value="SELF">SELF</option>
+                        <option value="SPO_USE">SPOUSE</option>
+                        <option value="FATHER">FATHER</option>
+                        <option value="MOTHER" >MOTHER</option>   
+                        <option value="CHILDREN" >CHILDREN</option>  
+                        <option value="OTHER" >OTHER</option>  
+                    </select>
+                </label>
+
+                <label class="item item-input item-stacked-label" ng-if="home.relation == 'OTHER'">
+                    <span class="input-label">Other Relation</span>
+                    <input type="text" placeholder="other_relation" ng-model="home.other_relation" ng-if="home.relation == 'OTHER'" >
+                </label>
+
+                <label class="item item-input item-stacked-label" >
+                    <span class="input-label">Full Name</span>
+                    <input type="text" placeholder="Patient Name" ng-model="home.patient_name">
+                </label>
+                <label class="item item-input item-stacked-label" >
+                    <span class="input-label">Patient Mobile</span>
+                    <input type="text" placeholder="Patient Mobile" ng-model="home.patient_mobile">
+                </label>
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Patient Age</span>
+                    <input type="text" placeholder="Patient Age" ng-model="home.patient_age">
+                </label>
+                <label class="item item-input item-stacked-label" ng-if="home.role_id != 8 && home.role_id != 9">
+                    <span class="input-label">Services</span>
+                    <select  class="minimal  item-input"   ng-model="home.servicename" style="width:100%;">
+                        <option ng-repeat="row in AllService" value="{{row.service_id}}">{{row.service_name}}</option>
+                    </select>
+                </label>
+                <label class="item item-input item-stacked-label" ng-if="home.role_id == 8">
+                    <span class="input-label">Blood Group</span>
+                    <select  class="minimal  item-input"  ng-model="home.blood_group" style="width:100%;">
+                        <option value="O+">O+</option>
+                        <option value="O-">O-</option>
+                        <option value="A+">A+</option>
+                        <option value="A-">A-</option>
+                        <option value="B+">B+</option>
+                        <option value="B-">B-</option>
+                        <option value="AB+">AB+</option>
+                        <option value="AB-">AB-</option>
+                    </select>
+                    
+                </label>
+                <label class="item item-input item-stacked-label" ng-if="home.role_id == 8">
+                    <span class="input-label">No Of Unit</span>
+                    <input type="text" placeholder="No of Unit" ng-model="home.no_of_unit">
+                </label>
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Prescription</span>
+                    <button class="button icon-left ion-camera" ng-click="selectPicture()">Select Photo</button>
+                    <!--<input type="file" file-model="myFile"/>-->
+                </label>
+                <!-- for collect at home -->
+                <label class="item item-input item-toggle" ng-show="home.role_id != 8">
+                    <span class="input-label">Collect @ Home</span>
+                    <label class="toggle toggle-balanced" ng-click="home.showcollect = !home.showcollect">
+                        <input type="checkbox">
+                        <div class="track">
+                          <div class="handle"></div>
+                        </div>
+                    </label>
+                </label>
+                <label class="item item-input item-stacked-label" ng-show="home.showcollect">
+                    <span class="input-label">Zip Code</span>
+                    <input type="text" placeholder="zip code"  ng-model="home.pincode" ng-blur="getAllAddress(home.pincode)">
+                </label>
+                <label class="item item-input item-stacked-label" ng-show="home.showcollect">
+                    <span class="input-label">Area</span>
+                    <select class="minimal  item-input" name="area" style="width:100%;"  ng-model="home.area_name">
+                        <option  value="{{home.area_name}}">{{home.area_name}}</option>
+                    </select>
+                </label>
+                <label class="item item-input item-stacked-label" ng-show="home.showcollect">
+                    <span class="input-label">City</span>
+                    <select class="minimal  item-input" name="city"  style="width:100%;" ng-model="home.city_name" >
+                        <option value="{{home.city_name}}">{{home.city_name}}</option>
+                    </select>
+                </label>
+                <label class="item item-input item-stacked-label" ng-show="home.showcollect">
+                    <span class="input-label">State</span>
+                    <select class="minimal  item-input" name="state" style="width:100%;" ng-model="home.state_name" >
+                        <option  value="{{home.state_name}}">{{home.state_name}}</option>
+                    </select>
+                </label>
+                <label class="item item-input item-stacked-label" ng-show="home.showcollect">
+                    <span class="input-label">Landmark</span>
+                    <input type="text" placeholder="Landmark" ng-model="home.landmark">
+                </label>
+
+                <label class="item item-input item-stacked-label" ng-show="home.showcollect">
+                    <span class="input-label">Address</span>
+                    <input type="text" placeholder="Address" ng-model="home.address">
+                </label>
+
+                <div class="" ng-if="home.role_id != 8">
+                    <input type="hidden"  name="area_id" ng-model="home.area_id">
+                    <input type="hidden"  name="state_id" ng-model="home.state_id">
+                    <input type="hidden"  name="city_id" ng-model="home.city_id">
+                </div>
+                
+                <label class="item item-input">
+                    <button class="button button-calm button-small button-block" ng-click="fixLabAppoint();">Confirm</button>
+                </label>
+
+
+            </div>
+
+
+        </form>
+
+    </ion-content>
+</ion-modal-view>
+
+
+

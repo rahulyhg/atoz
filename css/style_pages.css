@@ -1,0 +1,25 @@
+@charset "utf-8";
+/* CSS Document */
+
+.footer-top{ padding-top:10px; display:block}
+.active{color:#0db7a8}
+.title-1{ line-height:2.2; font-size:14px; padding-top:15px}
+.col-back{background-color: rgba(136, 136, 136, 0.08);padding-bottom: 15px;display: flex;}
+.opinion-list{ padding:0 15px}
+.opinion-list span{ font-weight:600;line-height: 2.8;}
+.opinion-list li{ list-style-type:circle}
+.col-span{ line-height:2.8;text-transform: uppercase;font-size: 13px;}
+.background_col{ background-color:#fff;     /*padding: 25px 0;
+    font-size: 17px;*/}
+.background_col a {
+    color: #0db7a8;
+    border-bottom: 2px solid #556180;
+    padding: 5px 0;
+}
+.col-row{ padding:0 30px}
+p{ text-align:justify}
+.service-col{ padding:10px 0;}
+.service-col li{ list-style-type:circle; float: left;padding-right: 40px;
+}
+.col-service li{ list-style-type:none}
+.btn{ padding:5px 18px;}

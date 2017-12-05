@@ -1,0 +1,28 @@
+<ion-modal-view>
+    <ion-header-bar>
+        <h1 class = "title">Select Location</h1>
+        <div class="buttons">
+        <button class = "button icon icon-left ion-ios-close-outline"  ng-click = "closeModal(1)">Close</button>
+        </div>
+    </ion-header-bar>
+
+    <ion-content class="bg-color1 padding-top padding-bottom">
+        <div class="list list-inset">
+            <label class="item item-input">
+                <i class="icon ion-ios-paperplane-outline placeholder-icon"></i>
+                <input type="text" placeholder="SEARCH LOCALITY" ng-model="home.locationtosearch" ng-change="searchLocation()">
+            </label>
+            <div ng-repeat="(key,row) in location">
+                <div class="item" href="#" 
+                     ng-click="home.locationtosearch = row.label;home.selectedLocation = row.value;home.selectedcategory = (row.category == 'main_city_name') ? 'Y' : 'N' ;closeModal(1)">
+                    {{row.label}}
+                </div>
+                <div class="item item-divider" ng-if="row.category == 'main_city_name'">
+                    Top Localities
+                </div>
+                
+            </div>
+        </div>
+        
+    </ion-content>
+</ion-modal-view>

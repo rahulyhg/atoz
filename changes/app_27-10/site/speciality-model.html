@@ -1,0 +1,45 @@
+<ion-modal-view>
+    <ion-header-bar>
+        <h1 class = "title">Select Speciality</h1>
+        <div class="buttons">
+        <button class = "button icon icon-left ion-ios-close-outline"  ng-click = "closeModal(2)">Close</button>
+        </div>
+    </ion-header-bar>
+
+    <ion-content class="bg-color1 padding-top padding-bottom">
+        <div class="list list-inset">
+            <label class="item item-input">
+                <i class="icon ion-search placeholder-icon"></i>
+                    <input type="text" placeholder="TYPE TO START SEARCHING" ng-model="home.spectosearch" ng-change="searchSpeciality()">                
+            </label>
+            <div ng-repeat="row in speciality">
+                <!--<div class="item item-divider" ng-if="isshow == true">
+                    {{row.category}}
+                </div>  -->          
+                <a class="item "  ng-class=" row.category != 'speciality' ? 'item-thumbnail-left' : '' "
+                     href="#/searchResult/{{row.value}}/{{home.selectedLocation}}/{{home.selectedcategory}}"
+                     ng-click="closeModal(2)" ng-if="row.category == 'speciality'">
+                    <img ng-src="{{home.atoz_upload+row.img}}" ng-if="row.category != 'speciality' " class="rounded-img">
+                    <h2>{{row.label}}</h2>
+                    <p ng-if="row.category != 'speciality' ">{{row.cityname}}</p>
+                    
+                </a>
+                <a class="item "  ng-class=" row.category != 'speciality' ? 'item-thumbnail-left' : '' "
+                     ng-click="details(row.user, row.clinic_id,row.role_id);closeModal(2)" ng-if="row.category == 'doctor'">
+                    <img ng-src="{{home.atoz_upload+row.img}}" ng-if="row.category == 'doctor' " class="rounded-img">
+                    <h2>{{row.label}}</h2>
+                    <p ng-if="row.category != 'speciality' ">{{row.cityname}}</p>
+                    
+                </a>
+                <a class="item "  ng-class=" row.category != 'speciality' ? 'item-thumbnail-left' : '' "
+                     ng-click="details(row.user, null,row.role_id);closeModal(2)" ng-if="row.category == 'hospital' || row.category == 'pathology' || row.category == 'diagnostic' || row.category == 'Blood Bank'|| row.category == 'Medical Store' ">
+                    <img ng-src="{{home.atoz_upload+row.img}}"  class="rounded-img">
+                    <h2>{{row.label}}</h2>
+                    <p ng-if="row.category != 'speciality' ">{{row.cityname}}</p>
+                    
+                </a>
+                
+            </div>
+        </div>
+    </ion-content>
+</ion-modal-view>

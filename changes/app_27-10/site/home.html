@@ -1,0 +1,127 @@
+<ion-view class=" auth-view" cache-view="false">
+    <ion-content>
+        <div class="site-view padding-left padding-right">
+            <div class="row">
+                <div class="col col-50">
+                    <img src="img/logo.png" class="" style="" height="32" />
+                </div>
+                <a class="col col-50 assertive text-right" href="#/emergencyList">
+                    Emergency 
+                    <img src="img/emergency.png" width="32" class="" style="vertical-align:middle" />
+                </a>
+            </div>
+            
+        </div>
+        <div class="homesubhead padding-top padding-bottom">
+            <div class="tabs tabs-icon-top light-bg ">
+                <a class="tab-item" ng-click = "openModal(1)">
+                    <i class="icon ion-ios-location-outline"></i>
+                    Location
+                    <div>{{home.selectedLocation}}</div>
+                </a>
+                <a class="tab-item" ng-click = "openModal(2)">
+                    <i class="icon ion-ios-search-strong"></i>
+                    Find
+                    <div>{{home.selectedSpeciality}}</div>
+                </a>
+                <a class="tab-item">
+                    <i class="icon ion-iphone"></i>
+                    Deal & Offers
+                </a>
+                <a class="tab-item" ng-show ="appData != null" href="#/myProfile/{{appData.user_id}}">
+                    <i class="icon ion-ios-person-outline"></i>
+                    {{appData.first_name+" "+appData.last_name}}
+                </a>
+                <a class="tab-item" style="" ng-click ="appData != null ? logout() : gotostate('login')">
+                    <i class="icon " ng-class="appData != null ? 'ion-log-out' : 'ion-ios-person-outline'"></i>
+                    {{appData != null ? "Logout" : 'Login'}}
+                </a>
+                <div class="clearfix"></div>
+            </div>
+            
+        </div>
+        <div class="themebg padding">
+            <div class="row clearfix services padding">
+                <div class="col col-50">
+                    <a class="button-icon icon-left" href="#/docType/spcType">
+                        <img src="img/doctors.png" style="" class="col-25 vert-align-middle" /> <span>Doctors</span>
+                    </a>
+                </div>
+                <div class="col col-50">
+                    <a class="button-icon icon-left" href="#/serviceType/hospital">
+                        <img src="img/hospital.png" class="col-25 vert-align-middle" /> <span>Hospitals</span>
+                    </a>
+                </div>
+            </div>
+            <div></div>
+            <div class="row services padding">
+                <div class="col col-50">
+                    <a class="button-icon icon-left" href="#/serviceType/diagnostic">
+                        <img src="img/diagnosticscenter.png" style="" class="col-25 vert-align-middle" /> <span>Diagnostic</span>
+                    </a>
+                </div>
+                <div class="col col-50">
+                    <a class="button-icon icon-left" href="#/serviceType/pathology">
+                        <img src="img/pathologylabs.png" class="col-25 vert-align-middle" /> <span>Pathology</span>
+                    </a>
+                </div>
+            </div>
+            <div></div>
+            <div class="row services padding">
+                <div class="col col-50">
+                    <a class="button-icon icon-left" href="#/serviceType/bloodbanks">
+                        <img src="img/bloodbanks.png" style="" class="col-25 vert-align-middle" /> <span>Blood Banks</span>
+                    </a>
+                </div>
+                <div class="col col-50">
+                    <a class="button-icon icon-left" href="#/serviceType/medicalstores">
+                        <img src="img/medicalstores.png" class="col-25 vert-align-middle" /> <span>Medical Stores</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="row clearfix features padding text-center">
+            <div class="col col-25">
+                <a class="button-icon icon-left">
+                    <div>
+                        <img src="img/dailyfreeoffering.png" style="width:60%;" class="" />
+                    </div>
+                    <h6><strong class="popup-title">Daily Free Offering</strong></h6>
+                </a>
+            </div>
+            <div class="col col-25">
+                <a class="button-icon icon-left">
+                    <div>
+                        <img src="img/secondopinion.png" style="width:60%;" class="" />
+                    </div>
+                    <h6><strong>Second Opinion</strong></h6>
+                </a>
+            </div>
+            <div class="col col-25">
+                <a class="button-icon icon-left">
+                    <div>
+                        <img src="img/yourequestwequote.png" style="width:60%;" class="" />
+                    </div>
+                    <h6><strong>You Request We Quote</strong></h6>
+                </a>
+            </div>
+            <div class="col col-25">
+                <a class="button-icon icon-left">
+                    <div>
+                        <img src="img/helpdesk.png" style="width:60%;" class="" />
+                    </div>
+                    <h6><strong>Help Desk</strong></h6>
+                </a>
+            </div>
+        </div>
+        <div class="themebg footer text-center bar bar-footer">
+            <ul class="row">
+                <li class="col"><a>About Us</a></li>
+                <li class="col"><a>Terms of Use</a></li>
+                <li class="col"><a>Privacy Policy</a></li>
+                <li class="col"><a>Contact Us</a></li>
+              </ul>
+        </div>
+        
+    </ion-content>
+</ion-view>
